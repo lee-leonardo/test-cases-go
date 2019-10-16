@@ -23,12 +23,8 @@ func Sorted(n int) []int {
 // The length of the list is n
 func SortedStep(n int, step int) []int {
     output := make([]int, n)
-    i := 1
-    j := 1
-    for i < n {
+    for i, j := 1, 1; i < n; i, j = i + 1, j + step {
         output[i] = j
-        i++
-        j += step
     }
 
     return output
@@ -56,4 +52,16 @@ func RandomInt(n int, mod int) []int {
     }
 
     return output
+}
+
+// ScrambleList randomly swaps length of list times
+func ScrambleList(list []int) {
+    rand.Seed(time.Now().UnixNano())
+
+    length := len(list)
+    for i := range list {
+        j := rand.Int() % length
+
+        list[i], list[j] = list[j], list[i]
+    }
 }
