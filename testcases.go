@@ -21,9 +21,9 @@ func Sorted(n int) []int {
 
 // SortedStep provides a list of integers from 1 to 2n + 1
 // The length of the list is n
-func SortedStep(n int, step int) []int {
+func SortedStep(n int, start int, step int) []int {
     output := make([]int, n)
-    for i, j := 0, 1; i < n; i, j = i + 1, j + step {
+    for i, j := 0, start; i < n; i, j = i + 1, j + step {
         output[i] = j
     }
 
