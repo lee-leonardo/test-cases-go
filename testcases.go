@@ -12,8 +12,8 @@ import (
 // The output is already pre-sorted
 func Sorted(n int) []int {
     output := make([]int, n)
-    for i := 1; i < n; i++ {
-        output[i] = i
+    for i := 0; i < n; i++ {
+        output[i] = i + 1
     }
 
     return output
@@ -23,7 +23,7 @@ func Sorted(n int) []int {
 // The length of the list is n
 func SortedStep(n int, step int) []int {
     output := make([]int, n)
-    for i, j := 1, 1; i < n; i, j = i + 1, j + step {
+    for i, j := 0, 1; i < n; i, j = i + 1, j + step {
         output[i] = j
     }
 
@@ -34,7 +34,7 @@ func SortedStep(n int, step int) []int {
 // The output is reverse sorted
 func ReverseSorted(n int) []int {
     output := make([]int, n)
-    for i := 0; i > 0; i-- {
+    for i := n; i > 0; i-- {
         output[i] = i
     }
 
